@@ -9,11 +9,11 @@ export default defineComponent({
     },
     textColor: {
       type: String,
-      default: 'var(--text-with-accent-color)'
+      default: 'var(--color-on-primary)'
     },
     backgroundColor: {
       type: String,
-      default: 'var(--accent-color)'
+      default: 'var(--color-primary)'
     },
     id: {
       type: String,
