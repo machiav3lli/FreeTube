@@ -70,16 +70,6 @@
         icon-color="var(--primary-color)"
         @change="updateMainColor"
       />
-      <ft-select
-        :placeholder="$t('Settings.Theme Settings.Secondary Color Theme')"
-        :value="secColor"
-        :select-names="colorNames"
-        :select-values="colorValues"
-        :disabled="!areColorThemesEnabled"
-        :icon="['fas', 'palette']"
-        icon-color="var(--accent-color)"
-        @change="updateSecColor"
-      />
     </ft-flex-box>
     <ft-prompt
       v-if="showRestartPrompt"

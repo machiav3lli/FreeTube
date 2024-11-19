@@ -562,7 +562,6 @@ export default defineComponent({
       'setupListenersToSyncWindows',
       'updateBaseTheme',
       'updateMainColor',
-      'updateSecColor',
       'showOutlines',
       'hideOutlines',
     ])

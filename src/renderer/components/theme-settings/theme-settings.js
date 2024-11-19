@@ -173,7 +173,6 @@ export default defineComponent({
       'updateBarColor',
       'updateBaseTheme',
       'updateMainColor',
-      'updateSecColor',
       'updateExpandSideBar',
       'updateUiScale',
       'updateDisableSmoothScrolling',
