@@ -13,8 +13,6 @@
         :label="subscribedText"
         :no-border="true"
         class="subscribeButton"
-        background-color="var(--primary-color)"
-        text-color="var(--text-with-main-color)"
         @click="handleSubscription"
       />
       <ft-prompt
@@ -30,8 +28,6 @@
         :no-border="true"
         :title="isProfileDropdownOpen ? $t('Profile.Close Profile Dropdown') : $t('Profile.Open Profile Dropdown')"
         class="profileDropdownToggle"
-        background-color="var(--primary-color)"
-        text-color="var(--text-with-main-color)"
         :aria-expanded="isProfileDropdownOpen"
         @click="toggleProfileDropdown"
       >
