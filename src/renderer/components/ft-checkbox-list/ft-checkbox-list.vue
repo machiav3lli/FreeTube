@@ -12,10 +12,10 @@
         :key="index"
         :name="inputName"
         :value="values[index]"
+        :checked="selectedValues.includes(values[index]) ?? null"
         :disabled="disabled"
         class="checkbox"
         type="checkbox"
-        :checked="selectedValues.includes(values[index]) ?? null"
         @change="change"
       >
       <label
