@@ -35,14 +35,107 @@
 .dropdownOpened {
   .subscribeButton,
   .profileDropdownToggle {
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
   }
 }
 
+.profileDropdownToggle.btn {
+  border-inline-start: none !important;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  display: inline-block;
+  min-inline-size: 1em;
+  padding-block: 8px;
+  padding-inline: 12px;
+  box-sizing: content-box;
+}
+
+.hasProfileDropdownToggle {
+  .subscribeButton.btn {
+    min-inline-size: 100px;
+    padding-block: 8px;
+    padding-inline: 12px;
+    border-inline-end: 2px solid var(--color-primary-pressed) !important;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+    box-sizing: content-box;
+  }
+}
+
+.hasProfileDropdownToggle > .subscribeButton.btn,
+.profileDropdownToggle.btn {
+  padding-block: 8px;
+  padding-inline: 12px;
+  box-shadow: none;
+  flex: auto;
+  block-size: 2em;
+}
+
 .profileDropdown {
-  background-color: var(--color-surface-container);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
   color: var(--color-on-surface);
-  border-radius: 0 0 12px 12px;
+  border-radius: 24px;
+
+  .profileList {
+    list-style-type: none;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  .profile {
+    cursor: pointer;
+    display: flex;
+    gap: 0.5em;
+    padding-inline-start: 0.5em;
+    block-size: 50px;
+    align-items: center;
+    transition: background 0.2s ease-out;
+    border-radius: 4px;
+    margin: 4px;
+
+    &:last-child {
+      border-end-start-radius: 24px;
+      border-end-end-radius: 24px;
+    }
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+      color: var(--color-on-primary-hover);
+      transition: background 0.2s ease-in;
+    }
+
+    .colorOption {
+      inline-size: 40px;
+      block-size: 40px;
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+    }
+
+    .initial {
+      font-size: 20px;
+      line-height: 1em;
+      text-align: center;
+      user-select: none;
+    }
+
+    .profileName {
+      padding-inline-end: 1em;
+      text-align: start;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &.subscribed {
+      background-color: var(--color-primary);
+
+      .profileName {
+        color: var(--color-on-primary);
+      }
+    }
+  }
 }
