@@ -1,4 +1,3 @@
-/* stylelint-disable no-descending-specificity */
 .pure-radiobutton input[type='radio'] {
   border: 0;
   clip: rect(0 0 0 0);
@@ -10,86 +9,110 @@
   inline-size: 1px;
 }
 
-.pure-radiobutton input[type='radio']:focus + label::before,
-.pure-radiobutton input[type='radio']:hover + label::before {
-  border: 2px solid var(--primary-color);
-}
-
-.pure-radiobutton input[type='radio']:active + label::before { transition-duration: 0s; }
-
 .pure-radiobutton input[type='radio'] + label {
   position: relative;
   padding-inline-start: 2em;
   user-select: none;
   cursor: pointer;
-  display: block;
-  margin-block-start: 10px;
+  display: flex;
+  align-items: center;
+  margin: 8px;
 }
 
 .pure-radiobutton input[type='radio'] + label::before {
-  box-sizing: content-box;
+  box-sizing: border-box;
   content: '';
-  color: var(--primary-text-color);
   position: absolute;
   inset-block-start: 50%;
   inset-inline-start: 0;
-  inline-size: 14px;
-  block-size: 14px;
-  margin-block-start: -9px;
-  border: 2px solid var(--primary-text-color);
-  text-align: center;
-  transition: all 0.4s ease;
+  inline-size: 20px;
+  block-size: 20px;
+  margin-block-start: -10px;
+  align-items: center;
+  border: 2px solid var(--color-on-surface);
+  border-radius: 50%;
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .pure-radiobutton input[type='radio'] + label::after {
-  box-sizing: content-box;
   content: '';
-  background-color: var(--primary-text-color);
   position: absolute;
   inset-block-start: 50%;
-  inset-inline-start: 4px;
+  inset-inline-start: 5px;
   inline-size: 10px;
   block-size: 10px;
   margin-block-start: -5px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
   transform: scale(0);
-  transform-origin: 50%;
-  transition: transform 200ms ease-out;
+  transform-origin: center;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pure-radiobutton input[type='radio']:disabled + label::before { border-color: #ccc; }
+.pure-radiobutton input[type='radio']:checked + label::before {
+  border-color: var(--color-primary);
+  animation: borderscale 0.2s ease-in;
+}
+
+.pure-radiobutton input[type='radio']:focus-visible + label::before {
+  background-color: var(--color-primary-container);
+}
+
+.pure-radiobutton input[type='radio']:checked + label::after {
+  content: '';
+  transform: scale(1);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pure-radiobutton input[type='radio']:disabled + label::before {
+  border-color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container);
+}
+
+.pure-radiobutton input[type='radio']:not(:disabled):focus + label::before,
+.pure-radiobutton input[type='radio']:not(:disabled):hover + label::before {
+  border: 2px solid var(--color-primary-container);
+}
+
+.pure-radiobutton input[type='radio']:not(:disabled):active + label::before {
+  border: 4px solid var(--color-primary-container);
+}
+
+.pure-radiobutton input[type='radio']:disabled + label {
+  cursor: not-allowed;
+}
 
 .pure-radiobutton input[type='radio']:disabled:focus + label::before,
-.pure-radiobutton input[type='radio']:disabled:hover + label::before { background-color: inherit; }
-
-.pure-radiobutton input[type='radio']:disabled:checked + label::before { background-color: #ccc; }
-
-
-.pure-checkbox input[type='radio']:checked + label::before,
-.pure-radiobutton input[type='radio']:checked + label::before {
-  animation: borderscale 300ms ease-in;
+.pure-radiobutton input[type='radio']:disabled:hover + label::before {
+  background-color: inherit;
+  cursor: not-allowed;
 }
 
-.pure-radiobutton input[type='radio']:focus + label::after {
-  background-color: var(--primary-color);
+.pure-radiobutton input[type='radio']:disabled:checked + label::after {
+  background-color: var(--color-on-surface);
 }
-
-.pure-radiobutton input[type='radio']:checked + label::after { transform: scale(1); }
-
-.pure-radiobutton input[type='radio'] + label::before,
-.pure-radiobutton input[type='radio'] + label::after { border-radius: 50%; }
 
 @keyframes
   borderscale {  50% {
-    box-shadow: 0 0 0 2px var(--primary-text-color);
+    box-shadow: 0 0 0 2px var(--color-on-surface);
   }
 }
 
 .radioTitle {
   margin-block: 0;
+  color: var(--color-on-surface);
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
 }
 
 @media only screen and (width <= 680px) {
   .pure-radiobutton input[type='radio'] + label {
-    margin-block-start: 3px;
+    margin-block-start: 4px;
+  }
+}
+
+@media (hover: none) {
+  .pure-radiobutton input[type='radio'] + label {
+    min-block-size: 40px;
   }
 }
