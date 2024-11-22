@@ -1,21 +1,25 @@
 .center {
-  margin-block: 5px 10px;
+  margin-block: 16px;
   text-align: center;
   user-select: none;
+  color: var(--color-on-surface);
 }
 
 .searchRadio {
-  padding: 5px;
+  padding: 8px;
+  margin-block: 4px;
 }
 
 .radioFlexBox {
   margin-block: 0;
   margin-inline: auto;
+  gap: 16px;
 }
 
 .searchFilterCloseButtonContainer {
   display: flex;
   justify-content: center;
+  margin-block-start: 16px;
 }
 
 @media only screen and (width <= 680px) {
@@ -26,5 +30,6 @@
 
   .radioFlexBox {
     flex-flow: column;
+    gap: 8px;
   }
 }

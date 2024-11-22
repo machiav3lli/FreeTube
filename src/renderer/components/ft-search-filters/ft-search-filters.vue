@@ -61,8 +61,9 @@
       <div class="searchFilterCloseButtonContainer">
         <ft-button
           :label="$t('Close')"
-          background-color="var(--primary-color)"
-          text-color="var(--text-with-main-color)"
+          background-color="var(--color-primary)"
+          text-color="var(--color-on-primary)"
+          variant="filled"
           @click="hideSearchFilters"
         />
       </div>
