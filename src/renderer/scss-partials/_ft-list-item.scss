@@ -41,7 +41,7 @@ $watched-transition-duration: 0.5s;
   @at-root {
     .watched &,
     .watched#{&} {
-      color: var(--tertiary-text-color);
+      color: var(--color-on-surface-variant);
       transition-duration: $watched-transition-duration;
     }
     .watched:hover &,
@@ -54,11 +54,12 @@ $watched-transition-duration: 0.5s;
 
 .ft-list-item {
   padding: 6px;
+  border-radius: 8px;
 
   &.watched {
-    background-color: var(--bg-color);
+    background-color: var(--color-background);
 
-    @include low-contrast-when-watched(var(--primary-text-color));
+    @include low-contrast-when-watched(var(--color-on-surface));
 
     .thumbnailImage {
       opacity: 0.3;
@@ -107,19 +108,21 @@ $watched-transition-duration: 0.5s;
 
     .videoWatched {
       place-self: flex-start start;
-      background-color: var(--bg-color);
-      color: var(--primary-text-color);
+      background-color: var(--color-background);
+      color: var(--color-on-surface);
       opacity: $thumbnail-overlay-opacity;
       padding: 2px;
+      font-size: 14px;
+      border-radius: 8px 0;
       pointer-events: none;
     }
 
     .videoDuration {
       place-self: flex-end end;
-      background-color: var(--card-bg-color);
-      border-radius: 5px;
-      color: var(--primary-text-color);
-      font-size: 15px;
+      background-color: var(--color-surface);
+      border-radius: 8px;
+      color: var(--color-on-surface);
+      font-size: 14px;
       line-height: 1.2;
       margin-block: 0 4px;
       margin-inline: 0 4px;
@@ -160,13 +163,15 @@ $watched-transition-duration: 0.5s;
     .trashIcon,
     .upArrowIcon,
     .downArrowIcon {
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .watchedProgressBar {
       place-self: flex-end stretch;
-      background-color: var(--primary-color);
-      block-size: 2px;
+      background-color: var(--color-primary);
+      block-size: 3px;
+      margin-inline: 4px;
+      border-radius: 4px;
       z-index: 2;
     }
 
@@ -178,13 +183,13 @@ $watched-transition-duration: 0.5s;
       pointer-events: none;
 
       .background {
-        background-color: var(--bg-color);
+        background-color: var(--color-background);
         opacity: 0.9;
       }
 
       .inner {
         align-items: center;
-        color: var(--primary-text-color);
+        color: var(--color-on-surface);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -196,6 +201,7 @@ $watched-transition-duration: 0.5s;
   .channelThumbnail {
     display: flex;
     justify-content: center;
+    border-radius: 24px;
 
     .channelThumbnailLink {
       inline-size: 100%;
@@ -233,7 +239,7 @@ $watched-transition-duration: 0.5s;
       word-break: break-word;
       word-wrap: break-word;
 
-      @include low-contrast-when-watched(var(--primary-text-color));
+      @include low-contrast-when-watched(var(--color-on-surface));
 
       @include is-sidebar-item {
         font-size: 15px;
@@ -247,14 +253,14 @@ $watched-transition-duration: 0.5s;
       overflow-wrap: anywhere;
       text-align: start;
 
-      @include low-contrast-when-watched(var(--secondary-text-color));
+      @include low-contrast-when-watched(var(--color-on-surface-variant));
 
       @include is-sidebar-item {
-        font-size: 12px;
+        font-size: 14px;
       }
 
       .channelName {
-        @include low-contrast-when-watched(var(--secondary-text-color));
+        @include low-contrast-when-watched(var(--color-on-surface-variant));
       }
     }
 
@@ -264,7 +270,7 @@ $watched-transition-duration: 0.5s;
       max-block-size: 50px;
       overflow-y: hidden;
 
-      @include low-contrast-when-watched(var(--secondary-text-color));
+      @include low-contrast-when-watched(var(--color-on-surface-variant));
     }
   }
 
@@ -274,7 +280,8 @@ $watched-transition-duration: 0.5s;
 
     @include is-sidebar-item {
       .videoThumbnail {
-        margin-inline-end: 10px;
+        margin-inline: 8px;
+        gap: 4px;
       }
     }
 
@@ -323,7 +330,7 @@ $watched-transition-duration: 0.5s;
 
     .videoThumbnail,
     .channelThumbnail {
-      margin-block-end: 12px;
+      margin-block-end: 8px;
 
       .thumbnailImage {
         // Ensure placeholder image displayed at same aspect ratio as most other images
@@ -334,6 +341,7 @@ $watched-transition-duration: 0.5s;
     .thumbnailImage,
     .channelThumbnail {
       inline-size: 100%;
+      border-radius: 8px;
     }
 
     .title {
