@@ -132,6 +132,8 @@
   text-align: center;
   user-select: none;
   z-index: 3;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px 2px var(--color-surface);
 
   &.left {
     inset-inline-end: calc(50% - 10px);

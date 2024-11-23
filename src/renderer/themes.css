@@ -75,7 +75,6 @@ it can be safely elided. This looks quite pleasant on this theme. */
 
 /* stylelint-disable no-descending-specificity */
 
-/* Dark theme Youtube and Invidious logo styling (in ft-share-button) */
 .system[data-system-theme*='dark'],
 .dark,
 .dracula,
@@ -84,34 +83,20 @@ it can be safely elided. This looks quite pleasant on this theme. */
 .nordic,
 .solarizedDark {
   --primary-shadow-color: rgb(0 0 0 / 75%);
-
-  .invidiousLogo {
-    background-image: url('./assets/img/invidious-logo-dark.svg');
-  }
-
-  .youtubeLogo {
-    filter: brightness(0.868);
-  }
 }
 
-.black .youtubeLogo {
-  filter: brightness(0.933);
-}
-
-.black .invidiousLogo {
-  background-image: url('./assets/img/invidious-logo-dark.svg');
-}
-
-
-/*************** LIGHT THEME ADJUSTMENTS ***************/
-
-/* Light theme Youtube and Invidious logo styling (in ft-share-button) */
 .invidiousLogo {
-  background-image: url('./assets/img/invidious-logo-light.svg');
+  background-color: var(--color-on-surface);
+  mask-image: url('~./assets/img/invidious-logo-light.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 .youtubeLogo {
-  filter: invert(0.87);
+  background-color: var(--color-on-surface);
+  mask-image: url('~./assets/img/yt_logo_mono_dark.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
 }
 
 /* stylelint-enable no-descending-specificity */

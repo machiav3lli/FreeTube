@@ -2,55 +2,79 @@
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: auto auto;
-  padding: 12px;
+  padding: 8px;
   inline-size: max-content;
+  background: transparent;
 }
 
 .header {
-  color: var(--primary-text-color);
-  font-size: 18px;
-  font-weight: bold;
-  margin-block: 4px 8px;
+  color: var(--color-on-surface);
+  font-size: 20px;
+  font-weight: 600;
+  margin-block: 4px 12px;
   margin-inline: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  letter-spacing: 0.1px;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
   max-inline-size: min-content;
-  min-inline-size: 150px;
+  min-inline-size: 180px;
+  gap: 4px;
 }
 
 .action {
-  padding: 6px;
+  padding-block: 8px;
+  padding-inline: 8px;
   white-space: initial;
+  border-radius: 24px;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-block-size: 40px;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-on-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--color-primary-pressed);
+    color: var(--color-on-primary-pressed);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-outline);
+    outline-offset: 2px;
+  }
 }
 
+
 .divider {
-  background: var(--tertiary-text-color);
+  background: var(--color-on-surface-variant);
+  opacity: 0.12;
   grid-row: span 3;
-  margin-block: 0;
+  margin-block: 8px;
   margin-inline: 12px;
   inline-size: 1px;
 }
 
-.youtubeLogo {
-  block-size: 18px;
-  inline-size: auto;
-}
-
-.invidious {
-  letter-spacing: -0.4px;
-}
-
-.invidiousLogo {
+.shareLogo {
   background-size: cover;
   display: inline-block;
-  block-size: 20px;
-  margin-inline-end: 2px;
-  inline-size: 20px;
+  block-size: 24px;
+  inline-size: 24px;
+  margin-inline-end: 8px;
+}
+
+.shareTitle {
+  letter-spacing: 0.15px;
+  font-weight: 600;
 }
 
 @media only screen and (width <= 450px) {
@@ -58,19 +82,31 @@
     grid-auto-flow: row;
     margin-inline: auto;
     justify-items: center;
-    max-inline-size: max-content;
+    max-inline-size: calc(100vw - 32px);
+    padding: 8px;
+    border-radius: 24px;
   }
 
   .header.invidious {
-    margin-block-start: 20px;
+    margin-block-start: 24px;
   }
 
   .buttons {
-    max-inline-size: min-content;
-    min-inline-size: 180px;
+    max-inline-size: 100%;
+    min-inline-size: 200px;
+    inline-size: 100%;
+  }
+
+  .action {
+    inline-size: 100%;
+    justify-content: flex-start;
   }
 
   .divider {
-    display: none;
+    margin-block: 16px;
+    margin-inline: 0;
+    inline-size: 100%;
+    block-size: 1px;
+    grid-column: span 2;
   }
 }
