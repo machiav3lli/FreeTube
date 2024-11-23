@@ -10,8 +10,8 @@
 .topNav {
   align-content: center;
   align-items: center;
-  background-color: var(--card-bg-color);
-  box-shadow: 0 2px 1px 0 var(--primary-shadow-color);
+  background-color: var(--color-background);
+  box-shadow: 0 2px 1px 0 var(--color-surface-variant);
   display: flex;
   block-size: 60px;
   inset-inline: 0;
@@ -27,7 +27,7 @@
   }
 
   @include top-nav-is-colored {
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
   }
 
   @media only screen and (width <= 680px) {
@@ -47,7 +47,8 @@
 
 .navIcon {
   border-radius: 50%;
-  color: var(--primary-text-color);
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
   cursor: pointer;
   font-size: 20px;
   block-size: 1em;
@@ -56,7 +57,8 @@
   inline-size: 1em;
 
   @include top-nav-is-colored {
-    color: var(--text-with-main-color);
+    background-color: var(--color-primary-container);
+    color: var(--color-on-primary-container);
   }
 
   &.arrowBackwardDisabled,
@@ -68,22 +70,24 @@
   }
 
   &:hover {
-    background-color: var(--side-nav-hover-color);
-    color: var(--side-nav-hover-text-color);
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
     transition: background 0.2s ease-in;
 
     @include top-nav-is-colored {
-      background-color: var(--primary-color-hover);
+      background-color: var(--color-primary-hover);
+      color: var(--color-on-primary-hover);
     }
   }
 
   &:active {
-    background-color: var(--tertiary-text-color);
-    color: var(--side-nav-active-text-color);
+    background-color: var(--color-surface-container-pressed);
+    color: var(--color-on-surface-variant);
     transition: background 0.2s ease-in;
 
     @include top-nav-is-colored {
-      background-color: var(--primary-color-active);
+      background-color: var(--color-primary-pressed);
+      color: var(--color-on-primary-pressed);
     }
   }
 }
@@ -94,12 +98,12 @@
   margin-inline-start: $effect-distance;
 
   &.filterChanged {
-    box-shadow: 0 0 $effect-distance var(--primary-color);
-    color: var(--primary-color);
+    box-shadow: 0 0 $effect-distance var(--color-primary);
+    color: var(--color-primary);
 
     @include top-nav-is-colored {
-      box-shadow: 0 0 $effect-distance var(--text-with-main-color);
-      color: var(--text-with-main-color);
+      box-shadow: 0 0 $effect-distance var(--color-on-primary);
+      color: var(--color-on-primary);
     }
   }
 }
@@ -135,21 +139,21 @@
     padding-inline: 10px 25px;
 
     &:hover {
-      background-color: var(--side-nav-hover-color);
-      color: var(--side-nav-hover-text-color);
+      background-color: var(--color-surface-container-hover);
+      color: var(--color-on-surface-variant);
       transition: background 0.2s ease-in;
 
       @include top-nav-is-colored {
-        background-color: var(--primary-color-hover);
+        background-color: var(--color-primary-hover);
       }
     }
 
     &:active {
-      background-color: var(--tertiary-text-color);
+      background-color: var(--color-on-surface-variant);
       transition: background 0.2s ease-in;
 
       @include top-nav-is-colored {
-        background-color: var(--primary-color-active);
+        background-color: var(--color-primary-pressed);
       }
     }
 
@@ -197,13 +201,13 @@
     display: flex;
 
     @media only screen and (width <= 680px) {
-      background-color: var(--side-nav-color);
+      background-color: var(--color-surface-container);
       inset-inline: 0;
       position: fixed;
       inset-block-start: 60px;
 
       @include top-nav-is-colored {
-        background-color: var(--primary-color-hover);
+        background-color: var(--color-primary-hover);
       }
     }
 
