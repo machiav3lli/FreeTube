@@ -19,19 +19,19 @@
   }
 
   &.base {
-    background-color: var(--card-bg-color);
-    color: var(--primary-text-color);
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
 
     &:not(.disabled) {
       &:hover,
       &:focus-visible {
-        background-color: var(--side-nav-hover-color);
-        color: var(--side-nav-hover-text-color);
+        background-color: var(--color-surface-container-high);
+        color: var(--color-on-surface);
       }
 
       &:active {
-        background-color: var(--side-nav-active-color);
-        color: var(--side-nav-active-text-color);
+        background-color: var(--color-surface-container-pressed);
+        color: var(--color-on-surface);
       }
     }
   }
@@ -39,61 +39,67 @@
   &.base-no-default:not(.disabled) {
     &:hover,
     &:focus-visible {
-      background-color: var(--side-nav-hover-color);
-      color: var(--side-nav-hover-text-color);
+      background-color: var(--color-surface-container-high);
+      color: var(--color-on-surface);
     }
 
     &:active {
-      background-color: var(--side-nav-active-color);
-      color: var(--side-nav-active-text-color);
+      background-color: var(--color-surface-container-pressed);
+      color: var(--color-on-surface);
     }
   }
 
   &.primary {
-    background-color: var(--primary-color);
-    color: var(--text-with-main-color);
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
 
     &:not(.disabled) {
       &:hover,
       &:focus-visible {
-        background-color: var(--primary-color-hover);
+        background-color: var(--color-primary-hover);
+        color: var(--color-on-primary-hover);
       }
 
       &:active {
-        background-color: var(--primary-color-active);
+        background-color: var(--color-primary-pressed);
+        color: var(--color-on-primary-pressed);
       }
     }
   }
 
 
   &.secondary {
-    background-color: var(--accent-color);
-    color: var(--text-with-accent-color);
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
 
     &:not(.disabled) {
       &:hover,
       &:focus-visible {
-        background-color: var(--accent-color-hover);
+        background-color: var(--color-secondary-hover);
+        color: var(--color-on-secondary-hover);
       }
 
       &:active {
-        background-color: var(--accent-color-active);
+        background-color: var(--color-secondary-pressed);
+        color: var(--color-on-secondary-pressed);
       }
     }
   }
 
   &.destructive {
-    background-color: var(--destructive-color);
-    color: var(--destructive-text-color);
+    background-color: var(--color-error);
+    color: var(--color-on-error);
 
     &:not(.disabled) {
       &:hover,
       &:focus-visible {
-        background-color: var(--destructive-hover-color);
+        background-color: var(--color-error-hover);
+        color: var(--color-on-error);
       }
 
       &:active {
-        background-color: var(--destructive-active-color);
+        background-color: var(--color-error-pressed);
+        color: var(--color-on-error);
       }
     }
   }
@@ -117,9 +123,8 @@
 }
 
 .iconDropdown {
-  background-color: var(--side-nav-color);
-  box-shadow: 0 1px 2px rgb(0 0 0 / 50%);
-  color: var(--secondary-text-color);
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
   display: inline;
   font-size: 12px;
   list-style-type: none;
@@ -160,20 +165,20 @@
 
     &:hover,
     &:focus-visible {
-      background-color: var(--side-nav-hover-color);
-      color: var(--side-nav-hover-text-color);
+      background-color: var(--color-surface-container-hover);
+      color: var(--color-on-surface-variant);
       transition: background 0.2s ease-in;
     }
 
     &:active {
-      background-color: var(--side-nav-active-color);
-      color: var(--side-nav-active-text-color);
+      background-color: var(--color-surface-container-pressed);
+      color: var(--color-on-surface);
       transition: background 0.1s ease-in;
     }
   }
 
   .listItemDivider {
-    border-block-start: 1px solid var(--tertiary-text-color);
+    border-block-start: 1px solid var(--color-on-surface-variant-opacity);
     margin-block: 1px;
     margin-inline: auto;
     // Too "visible" with current color
