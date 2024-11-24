@@ -1120,20 +1120,21 @@ a:visited {
 ::-webkit-scrollbar {
   inline-size: auto;
   block-size: auto;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-surface-container);
-  border-radius: 6px;
-  border: 2px solid transparent;
+  background: var(--color-surface-container-highest);
+  border-radius: 8px;
+  border: 1px solid transparent;
   background-clip: padding-box;
-}
 
-::-webkit-scrollbar-thumb:hover {
-  border: 0;
-}
+  &:hover {
+    border: 0;
+  }
 
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:focus {
-  background: var(--color-surface-container-hover);
+  &:hover,
+  &:focus {
+    background: var(--color-primary-hover);
+  }
 }

@@ -2,13 +2,15 @@
   display: block;
   block-size: calc(100vh - 60px);
   inline-size: 200px;
+  padding-inline-start: 8px;
   overflow-x: hidden;
   position: sticky;
   inset-inline-start: 0;
   inset-block-start: 60px;
   z-index: 3;
-  box-shadow: 1px -1px 1px -1px var(--primary-shadow-color);
-  background-color: var(--side-nav-color);
+  align-items: center;
+  box-shadow: 1px -1px 1px -1px var(--color-surface);
+  background-color: var(--color-surface-container);
   transition-property: inline-size;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
@@ -21,28 +23,16 @@
   overflow: hidden auto;
 }
 
-.closed .inner {
-  inline-size: 80px;
-}
-
-.closed .hiddenLabels {
-  inline-size: 60px;
-}
-
-.closed.hiddenLabels {
-  inline-size: 60px;
-}
-
-.topNavOption {
-  margin-block-start: 10px;
-}
-
 .navOption,
 .navChannel {
   position: relative;
-  padding: 5px;
-  min-block-size: 35px;
+  margin-block: 4px;
+  min-block-size: 48px;
   -webkit-user-drag: none;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
 
 .moreOption {
@@ -51,60 +41,48 @@
 
 .navOption,
 .channelLink {
-  display: block;
-  color: inherit;
+  color: var(--color-on-surface-variant);
   text-decoration: inherit;
 }
 
-
 .navOption .navLabel {
-  margin-inline-start: 40px;
+  margin-inline-start: 16px;
   overflow: hidden;
   word-break: break-word;
+  margin-block: 0;
 }
 
 .navOption:hover,
 .navChannel:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
-  transition: background 0.2s ease-in;
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
 }
 
 .navOption:active,
 .navChannel:active {
-  background-color: var(--side-nav-active-color);
-  color: var(--side-nav-active-text-color);
-  transition: background 0.2s ease-in;
+  background-color: var(--color-surface-container-highest);
+  color: var(--color-on-surface);
 }
 
 .navIcon {
-  block-size: 1em;
-  inline-size: 1.25em;
-  margin-inline-start: 10px;
-}
-
-.navIcon.fa-user-check {
-  /* This icon is too big by default */
-  inline-size: 1em;
-
-  /* Align icon according to torso */
-  transform: translateX(0.2em);
+  inline-size: 36px;
+  aspect-ratio: 1;
+  margin: 0;
 }
 
 .navChannel .navLabel {
   overflow: hidden;
-  margin-inline-start: 40px;
+  margin-inline-start: 16px;
   word-break: break-word;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 
 .thumbnailContainer {
-  inline-size: 35px;
+  min-inline-size: 48px;
   margin: 0;
-  position: absolute;
-  inset-block-start: 50%;
-  transform: translateY(-50%);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .channelThumbnail {
@@ -114,88 +92,86 @@
 
 .noThumbnail {
   /* font-size is used for font-icon */
-  font-size: 35px;
-}
-
-.closed {
-  inline-size: 80px;
+  font-size: 36px;
+  color: var(--color-on-surface-variant);
 }
 
 .sideNav hr {
-  inline-size: 90%;
+  inline-size: calc(100% - 16px);
+  margin-inline: 8px;
+  align-self: center;
   block-size: 1px;
   border: 0;
-  background-color: var(--primary-color);
+  background-color: var(--color-outline-variant);
 }
 
 .refreshIcon {
   position: absolute;
-  inset-block-start: 20px;
-  inset-inline-end: 20px;
+  inset-block: 20px;
+  inset-inline: 20px;
 }
 
-.closed .refreshIcon {
-  display: none;
-}
+.closed {
+  inline-size: 84px;
 
-.closed .navOption {
-  inline-size: 100%;
-  padding-block: 5px;
-  padding-inline: 0;
-}
+  .inner {
+    inline-size: 100%;
+  }
 
-.closed .navIcon {
-  margin-inline-start: 0;
-  inline-size: 100%;
-  display: block;
-  margin-block-end: 0;
-}
+  .hiddenLabels {
+    inline-size: 60px;
+  }
 
-.closed .navIconExpand {
-  block-size: 1.3em;
-}
+  &.hiddenLabels {
+    inline-size: 60px;
+  }
 
-.closed .navIconExpand.fa-user-check {
-  /* This icon is too big by default */
-  block-size: 1.15em;
-}
+  .refreshIcon {
+    display: none;
+  }
 
-.closed .navLabel {
-  margin-inline-start: 0;
-  inline-size: 100%;
-  text-align: center;
-  inset-inline-start: 0;
-  font-size: 11px;
-  margin-block-end: 0;
-}
+  .navOption {
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    flex-direction: column;
+  }
 
-.closed .navChannel {
-  inline-size: 100%;
-  block-size: 45px;
-  padding-block: 5px;
-  padding-inline: 0;
-}
+  .navChannel {
+    aspect-ratio: 1;
+    block-size: auto;
+  }
 
-.closed .thumbnailContainer {
-  position: static;
-  display: block;
-  float: none;
-  margin-inline: auto;
-  inset-block-start: 0;
-  transform: none;
-  margin-block: 0.3em;
+  .thumbnailContainer {
+    position: static;
+    float: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navIcon {
+    display: block;
+  }
+
+  .navLabel {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-inline-start: 4px;
+  }
 }
 
 @media only screen and (width > 680px) {
   ::-webkit-scrollbar {
-    inline-size: 10px;
-    block-size: 10px;
+    inline-size: 8px;
+    block-size: 8px;
   }
 }
 
 @media only screen and (width <= 680px) {
   .inner {
-    display: contents; /* sunglasses emoji */
+    display: contents;
   }
 
   hr,

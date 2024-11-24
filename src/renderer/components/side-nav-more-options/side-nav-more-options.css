@@ -9,23 +9,24 @@
   color: inherit;
   text-decoration: none;
   display: block;
+  border-radius: 8px;
 }
 
 .navOption:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
+  background-color: var(--color-surface-container-hover);
+  color: var(--color-on-surface-variant);
   transition: background 0.2s ease-in;
 }
 
 .navOption:active {
-  background-color: var(--side-nav-active-color);
-  color: var(--side-nav-active-text-color);
+  background-color: var(--color-surface-container-pressed);
+  color: var(--color-on-surface);
   transition: background 0.2s ease-in;
 }
 
 .moreOptionContainer {
   position: fixed;
-  background-color: var(--side-nav-color);
+  background-color: var(--color-surface-container);
   inset-block-end: 60px;
   inline-size: 70px;
   z-index: 0;
