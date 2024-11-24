@@ -53,18 +53,18 @@
 
 :deep(.shaka-overflow-menu),
 :deep(.shaka-settings-menu) {
-  background: var(--card-bg-color) !important;
+  background: var(--color-surface-container) !important;
 }
 
 :deep(.shaka-overflow-menu button),
 :deep(.shaka-settings-menu button) {
-  color: var(--primary-text-color) !important;
+  color: var(--color-on-surface) !important;
 }
 
 :deep(.shaka-overflow-menu button:hover),
 :deep(.shaka-settings-menu button:hover) {
-  background: var(--side-nav-hover-color) !important;
-  color: var(--side-nav-hover-text-color) !important;
+  background: var(--color-primary-container) !important;
+  color: var(--color-on-primary-container) !important;
 }
 
 /* End of theming code */
@@ -78,10 +78,10 @@
   left: 5px;
   top: 5px;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 8px;
   line-height: 1.4em;
-  background-color: rgb(0 0 0 / 70%);
-  color: #fff;
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
   z-index: 2;
 
   /* user-select is intentionally not disabled, so that you can select and copy the stats */
@@ -96,10 +96,10 @@
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface);
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .offlineIcon {
@@ -115,7 +115,7 @@
 }
 
 :deep(.shaka-volume-bar-container) {
-  flex-shrink: initial;
+  border-radius: 12px;
 }
 
 .skippedSegmentsWrapper {
@@ -134,7 +134,7 @@
   padding: 10px;
   border-radius: 20px;
   background-color: rgb(0 0 0 / 80%);
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 :deep(.markerContainer) {
@@ -147,12 +147,12 @@
 }
 
 :deep(.sponsorBlockMarker) {
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
 }
 
 :deep(.chapterMarker) {
-  width: 2px;
-  background-color: #000;
+  width: 3px;
+  background-color: var(--color-outline);
 }
 
 :deep(.sponsorBlockMarker),
@@ -170,11 +170,12 @@
   top: 5px;
   left: 5px;
   max-width: calc(100% - 10px);
+  padding-inline: 8px;
   font-size: xx-large;
+  background-color: #0008;
   color: #fff;
   font-weight: normal;
-  background-color: rgb(0 0 0 / 50%);
-  border-radius: 5px;
+  border-radius: 8px;
   user-select: none;
   text-overflow: ellipsis;
   text-wrap: nowrap;
@@ -226,20 +227,20 @@
   padding: 0;
 }
 
-@media only screen and (width <=400px) {
+@media only screen and (width <= 400px) {
   :deep(.shaka-text-container) {
     /* make subtitles take up slightly less space when a mobile phone is in portrait orientation */
     font-size: 16px !important;
   }
 }
 
-@media only screen and (width <=1000px) {
+@media only screen and (width <= 1000px) {
   :deep(.playerFullscreenTitleOverlay) {
     font-size: large;
   }
 }
 
-@media only screen and (width <=1350px) {
+@media only screen and (width <= 1350px) {
   :deep(.theatre-button) {
     display: none;
   }
@@ -252,7 +253,7 @@
   }
 }
 
-@media (prefers-reduced-transparency:no-preference) {
+@media (prefers-reduced-transparency: no-preference) {
   /* add transparency to big play button */
   :deep(.shaka-controls-container[shown='true'] > .shaka-play-button-container > .shaka-play-button) {
     opacity: 0.75 !important;
