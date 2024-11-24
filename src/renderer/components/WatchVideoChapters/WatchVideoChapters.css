@@ -37,10 +37,21 @@
   grid-template:
     'thumbnail title' 2fr
     'thumbnail timestamp' 2fr / auto 1fr;
-  column-gap: 10px;
+  column-gap: 8px;
+  border-radius: 8px;
   justify-items: start;
   cursor: pointer;
   font-size: 15px;
+
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
+
+  &:active {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
 }
 
 .chaptersWrapper.compact .chapter {
@@ -51,12 +62,12 @@
 .chapterThumbnail {
   grid-area: thumbnail;
   inline-size: 130px;
-  margin: 3px;
-}
+  margin: 4px;
+  border-radius: 8px;
 
-.chapter.current .chapterThumbnail {
-  border: solid 3px var(--accent-color);
-  margin: 0;
+  &:hover {
+    border: solid 3px var(--color-outline-variant);
+  }
 }
 
 .chapterTitle {
@@ -65,16 +76,37 @@
   margin: 0;
 }
 
-.chapter.current .chapterTitle {
-  font-weight: bold;
+.chapter.current {
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-on-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--color-primary-pressed);
+    color: var(--color-on-primary-pressed);
+  }
+
+  .chapterThumbnail {
+    border: solid 3px var(--color-secondary);
+    border-radius: 8px;
+    margin: 0;
+  }
+
+  .chapterTitle {
+    font-weight: bold;
+  }
 }
 
 .chapterTimestamp {
   grid-area: timestamp;
   align-self: flex-start;
-  padding-block: 3px;
+  padding-block: 4px;
   padding-inline: 4px;
-  border-radius: 5px;
-  background-color: var(--accent-color);
-  color: var(--text-with-accent-color);
+  border-radius: 8px;
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
 }
