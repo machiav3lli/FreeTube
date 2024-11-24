@@ -58,24 +58,21 @@ body[dir='rtl'] .ft-input-component.search.showClearTextButton:focus-within .inp
   margin-inline: 3px;
   padding: 10px;
   border-radius: 100%;
-  color: var(--primary-text-color);
+  background-color: transparent;
+  color: var(--color-on-surface);
   opacity: 0;
   transition: background 0.2s ease-in;
-}
 
-.clearInputTextButton.visible:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
-}
+  &.visible:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+  }
 
-.forceTextColor .clearInputTextButton:hover {
-  background-color: var(--primary-color-hover);
-}
-
-.clearInputTextButton.visible:active {
-  background-color: var(--tertiary-text-color);
-  color: var(--side-nav-active-text-color);
-  transition: background 0.2s ease-in;
+  &.visible:active {
+    background-color: var(--color-surface-container-pressed);
+    color: var(--color-on-surface-variant);
+    transition: background 0.2s ease-in;
+  }
 }
 
 .search .clearInputTextButton {
@@ -83,11 +80,18 @@ body[dir='rtl'] .ft-input-component.search.showClearTextButton:focus-within .inp
 }
 
 .forceTextColor .clearInputTextButton {
-  color: #eee;
-}
+  background-color: var(--color-primary-pressed);
+  color: var(--color-on-primary-hover);
 
-.forceTextColor .clearInputTextButton:active {
-  background-color: var(--primary-color-active);
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-on-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--color-primary-pressed);
+    color: var(--color-on-primary-pressed);
+  }
 }
 
 .ft-input {
@@ -99,28 +103,20 @@ body[dir='rtl'] .ft-input-component.search.showClearTextButton:focus-within .inp
   margin-block-end: 10px;
   font-size: 16px;
   block-size: 45px;
-  color: var(--secondary-text-color);
-  border-radius: 5px;
-  background-color: var(--search-bar-color);
-}
-
-.ftcomponent ::placeholder {
-  color: var(--tertiary-text-color);
-  user-select: none;
+  border-radius: 24px;
+  background-color: var(--color-surface-container-low);
+  color: var(--color-on-surface-variant);
 }
 
 .forceTextColor .ft-input {
-  color: #eee;
-  background-color: var(--primary-input-color);
+  background-color: var(--color-primary-hover);
+  color: var(--color-on-primary-hover);
 }
 
 .forceTextColor .ft-input:focus {
-  box-shadow: 0 0 1rem 0 var(--primary-input-color);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
   transition: box-shadow 0.2s ease-in-out;
-}
-
-.forceTextColor ::placeholder {
-  color: #eee;
 }
 
 .inputWrapper {
@@ -135,26 +131,62 @@ body[dir='rtl'] .ft-input-component.search.showClearTextButton:focus-within .inp
   inset-block-start: -8px;
   inset-inline-end: 0;
   border-radius: 100%;
-  color: var(--primary-text-color);
+  background-color: transparent;
+  color: var(--color-on-surface);
 
   /* this should look disabled by default */
   opacity: 0.5;
 }
 
 .inputAction.enabled {
+  background-color: transparent;
+  color: var(--color-on-surface);
   opacity: 1;
 
   /* Only look respond to cursor when enabled */
   cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+    transition: background 0.2s ease-in;
+  }
+
+  &:active {
+    background-color: var(--color-surface-container-pressed);
+    color: var(--color-on-surface-variant);
+    transition: background 0.2s ease-in;
+  }
 }
 
+.forceTextColor .inputAction.enabled {
+  background-color: var(--color-primary-pressed);
+  color: var(--color-on-primary-hover);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: var(--color-on-primary-hover);
+  }
+
+  &:active {
+    background-color: var(--color-primary-pressed);
+    color: var(--color-on-primary-pressed);
+  }
+}
+
+.inputAction:not(:enabled),
+.ftcomponent ::placeholder {
+  color: var(--color-on-surface);
+  user-select: none;
+}
+
+.forceTextColor .inputAction:not(:enabled),
+.forceTextColor ::placeholder {
+  color: var(--color-on-primary);
+}
 
 .search ::-webkit-calendar-picker-indicator {
   display: none;
-}
-
-.forceTextColor .inputAction {
-  color: #eee;
 }
 
 .ft-input-component.showActionButton .ft-input {
@@ -165,48 +197,29 @@ body[dir='rtl'] .ft-input-component.search.showClearTextButton:focus-within .inp
   padding-inline-end: calc(36px + 6px);
 }
 
-.inputAction.enabled:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
-  transition: background 0.2s ease-in;
-}
-
-.forceTextColor .inputAction.enabled:hover {
-  background-color: var(--primary-color-hover);
-}
-
-.inputAction.enabled:active {
-  background-color: var(--tertiary-text-color);
-  color: var(--side-nav-active-text-color);
-  transition: background 0.2s ease-in;
-}
-
-.forceTextColor .inputAction.enabled:active {
-  background-color: var(--primary-color-active);
-}
-
 .list {
   position: absolute;
   inline-size: 100%;
   list-style: none;
+  padding: 4px;
   margin: 0;
-  padding-block: 5px;
-  padding-inline: 0;
   z-index: 10;
-  border-radius: 0 0 5px 5px;
+  border-radius: 8px;
   word-wrap: break-word;
-  box-shadow: 0 0 10px var(--scrollbar-color-hover);
-  background-color: var(--search-bar-color);
-}
+  box-shadow: 0 2px 6px 2px var(--color-surface);
+  background-color: var(--color-surface-container-low);
 
-.list li {
-  display: block;
-  padding-block: 0;
-  padding-inline: 15px;
-  line-height: 2rem;
-}
+  li {
+    display: block;
+    padding-block: 0;
+    padding-inline: 16px;
+    line-height: 2rem;
+    border-radius: 4px;
+    gap: 4px;
+  }
 
-.hover {
-  background-color: var(--scrollbar-color-hover);
-  color: var(--scrollbar-text-color-hover);
+  li:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+  }
 }
