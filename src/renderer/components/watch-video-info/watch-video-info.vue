@@ -43,7 +43,7 @@
         >
           <div
             class="likeBar"
-            :style="{ background: `linear-gradient(to right, var(--accent-color) ${likePercentageRatio}%, #9E9E9E ${likePercentageRatio}%` }"
+            :style="{ background: `linear-gradient(to right, var(--color-primary) ${likePercentageRatio}%, #9E9E9E ${likePercentageRatio}%` }"
           />
           <div>
             <span class="likeCount"><font-awesome-icon :icon="['fas', 'thumbs-up']" /> {{ parsedLikeCount }}</span>
@@ -68,19 +68,28 @@
             >
           </router-link>
         </div>
-        <div>
+        <div
+          class="lineContainer"
+        >
           <router-link
             :to="`/channel/${channelId}`"
             class="channelName"
           >
             {{ channelName }}
           </router-link>
+          <p
+            v-if="subscriptionCountText !== null && !hideChannelSubscriptions"
+            class="subCount"
+          >
+            {{ $tc('Global.Counts.Subscriber Count', subscriptionCountText, { count: subscriptionCountText }) }}
+          </p>
+        </div>
+        <div>
           <ft-subscribe-button
             v-if="!hideUnsubscribeButton"
             :channel-id="channelId"
             :channel-name="channelName"
             :channel-thumbnail="channelThumbnail"
-            :subscription-count-text="subscriptionCountText"
           />
         </div>
       </div>

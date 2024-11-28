@@ -16,45 +16,60 @@
 
 .videoMetrics,
 .videoButtons {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .unlistedBadge {
-  background-color: var(--secondary-card-bg-color);
+  background-color: var(--color-surface-container-highest);
   border-radius: 5px;
   display: inline;
   padding-inline: 5px;
   padding-block: 2px;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
 }
 
 .videoButtons {
+  align-items: start;
+
   .profileRow {
     display: flex;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .lineContainer {
+    display: block;
+    margin-block: 8px;
+    align-self: start;
     align-items: center;
   }
 
   .channelThumbnail {
     border-radius: 50%;
     cursor: pointer;
-    margin-inline-end: 10px;
-    inline-size: 56px;
+    margin-inline-end: 12px;
+    inline-size: 64px;
   }
 
   .channelName {
-    color: inherit;
+    color: var(--color-on-surface);
     cursor: pointer;
-    display: block;
-    margin-inline-start: 6px;
-    margin-block-end: 3px;
-    position: relative;
+    margin-inline-end: 8px;
     text-decoration: inherit;
-    inset-block-start: -2px;
+    font-size: 20px;
+  }
+
+  .subCount {
+    color: var(--color-on-surface-variant);
+    display: block;
+    margin-inline-end: 8px;
+    text-decoration: inherit;
+    font-size: 16px;
   }
 
   .subscribeButton {
@@ -68,7 +83,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 4px;
+    padding-block: 8px;
+    gap: 8px;
 
     @media screen and (width <= 680px) {
       :deep(.iconDropdown) {
@@ -94,10 +110,10 @@
 
 .videoMetrics {
   font-size: 14px;
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 
   .likeSection {
-    color: var(--tertiary-text-color);
+    color: var(--color-on-surface-variant);
     display: flex;
     flex-direction: column;
     margin-inline-start: auto;
