@@ -48,19 +48,18 @@
         </div>
 
         <div class="infoActionsContainer">
-          <FtShareButton
-            v-if="!hideSharingActions && showShareMenu"
-            :id="id"
-            share-target-type="Channel"
-            class="shareIcon"
-          />
-
           <FtSubscribeButton
             v-if="!hideUnsubscribeButton && (!hasErrorMessage || isSubscribed)"
             :channel-id="id"
             :channel-name="name"
             :channel-thumbnail="thumbnailUrl"
             @subscribed="subscribed"
+          />
+          <FtShareButton
+            v-if="!hideSharingActions && showShareMenu"
+            :id="id"
+            share-target-type="Channel"
+            class="shareIcon"
           />
         </div>
       </div>
