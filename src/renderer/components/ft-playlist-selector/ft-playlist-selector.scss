@@ -3,7 +3,8 @@
 
   &:hover ,
   &.selected {
-    background-color: var(--bg-color);
+    background-color: var(--color-background);
+    border-radius: 8px;
 
     .thumbnailImage {
       opacity: 0.3;
@@ -18,16 +19,19 @@
       inset-inline-end: 0;
       inset-block: 0;
       inline-size: 60px;
+      block-size: calc(100% - 5px);
       font-size: 20px;
 
       .background,
       .inner {
+        border-start-end-radius: 8px;
+        border-end-end-radius: 8px;
         position: absolute;
         inset: 0;
       }
 
       .background {
-        background-color: var(--bg-color);
+        background-color: var(--color-background);
         opacity: 0.9;
       }
 
@@ -36,7 +40,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: var(--primary-text-color);
+        color: var(--color-on-background);
       }
     }
   }
@@ -53,7 +57,7 @@
     }
 
     .videoPresenceCount {
-      margin-block-start: 4px;
+      margin-block: 4px;
     }
   }
 
@@ -62,15 +66,14 @@
     flex-direction: column;
     inline-size: 245px;
     min-block-size: 230px;
-    padding-block-end: 20px;
+    padding-block-end: 16px;
 
     .thumbnail {
-      margin-block-end: 12px;
-
       .thumbnailImage {
         inline-size: 100%;
         // Ensure placeholder image displayed at same aspect ratio as most other images
         aspect-ratio: 16/9;
+        border-radius: 8px;
       }
     }
 
