@@ -76,6 +76,16 @@ $watched-transition-duration: 0.5s;
   .videoThumbnail {
     display: grid;
 
+    &:hover ,
+    &.selected {
+      background-color: var(--color-background);
+      border-radius: 8px;
+
+      .thumbnailImage {
+        opacity: 0.3;
+      }
+    }
+
     .thumbnailLink,
     .videoWatched,
     .videoDuration,
@@ -181,6 +191,12 @@ $watched-transition-duration: 0.5s;
       font-size: 20px;
       inline-size: 60px;
       pointer-events: none;
+
+      .background,
+      .inner {
+        border-start-end-radius: 8px;
+        border-end-end-radius: 8px;
+      }
 
       .background {
         background-color: var(--color-background);
