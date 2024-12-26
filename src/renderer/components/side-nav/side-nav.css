@@ -24,44 +24,43 @@
 }
 
 .navOption,
+.channelLink {
+  color: var(--color-on-surface-variant);
+  text-decoration: inherit;
+}
+
+.navOption,
 .navChannel {
   position: relative;
   margin-block: 4px;
-  min-block-size: 48px;
+  min-block-size: 52px;
   -webkit-user-drag: none;
   display: flex;
   align-items: center;
   border-radius: 8px;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
+
+  &:active {
+    background-color: var(--color-surface-container-highest);
+    color: var(--color-on-surface);
+  }
 }
 
 .moreOption {
   display: none;
 }
 
-.navOption,
-.channelLink {
-  color: var(--color-on-surface-variant);
-  text-decoration: inherit;
-}
-
+.navChannel .navLabel,
 .navOption .navLabel {
   margin-inline-start: 16px;
   overflow: hidden;
   word-break: break-word;
   margin-block: 0;
-}
-
-.navOption:hover,
-.navChannel:hover {
-  background-color: var(--color-surface-container-high);
-  color: var(--color-on-surface);
-}
-
-.navOption:active,
-.navChannel:active {
-  background-color: var(--color-surface-container-highest);
-  color: var(--color-on-surface);
 }
 
 .navIcon {
@@ -70,15 +69,8 @@
   margin: 0;
 }
 
-.navChannel .navLabel {
-  overflow: hidden;
-  margin-inline-start: 16px;
-  word-break: break-word;
-  font-size: 0.875rem;
-}
-
 .thumbnailContainer {
-  min-inline-size: 48px;
+  min-inline-size: 52px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -130,16 +122,12 @@
     display: none;
   }
 
+  .navChannel,
   .navOption {
     align-items: center;
     justify-content: center;
     aspect-ratio: 1;
     flex-direction: column;
-  }
-
-  .navChannel {
-    aspect-ratio: 1;
-    block-size: auto;
   }
 
   .thumbnailContainer {
