@@ -52,7 +52,7 @@
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   animation: sk-bounce 2s infinite ease-in-out;
 }
 

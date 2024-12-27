@@ -11,7 +11,7 @@
   max-inline-size: 92vw;
 }
 
-.select-container {
+.selects-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -23,11 +23,11 @@
 }
 
 .message {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 }
 
 .getNextPage {
-  background-color: var(--search-bar-color);
+  background-color: var(--color-surface-container-low);
   inline-size: 100%;
   block-size: 45px;
   line-height: 45px;

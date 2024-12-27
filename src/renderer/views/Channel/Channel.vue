@@ -37,7 +37,7 @@
         :tags="tags"
         :related-channels="relatedChannels"
       />
-      <div class="select-container">
+      <div class="selects-container">
         <ft-select
           v-if="showVideoSortBy"
           v-show="currentTab === 'videos' && latestVideos.length > 0"

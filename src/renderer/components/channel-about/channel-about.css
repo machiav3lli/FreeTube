@@ -1,21 +1,25 @@
 .about {
-  background-color: var(--card-bg-color);
-  margin-block-start: 0;
-  padding: 10px;
+  background-color: var(--color-surface-container-low);
+  padding: 16px;
   position: relative;
   z-index: 1;
+  border-radius: 12px;
 }
 
 .aboutInfo {
-  font-size: 17px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
   white-space: pre-wrap;
+  color: var(--color-on-surface);
+  margin-block-end: 24px;
 }
 
 .aboutTags {
   display: flex;
   flex-flow: row wrap;
-  gap: 5px 15px;
-  justify-content: center;
+  gap: 8px;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
 }
@@ -26,17 +30,57 @@
 }
 
 .aboutTagLink {
-  background-color: var(--secondary-card-bg-color);
-  color: var(--primary-text-color);
-  border-radius: 7px;
-  padding: 7px;
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border-radius: 8px;
+  padding-block: 8px;
+  padding-inline: 16px;
   text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  transition: background-color 0.2s ease;
+}
+
+.aboutTagLink:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+.aboutTagLink:active {
+  background-color: var(--color-secondary-pressed);
 }
 
 .aboutDetails {
   text-align: start;
+  margin-block-end: 24px;
+  color: var(--color-on-surface);
 }
 
 .aboutDetails th {
-  padding-inline-end: 10px;
+  padding-inline-end: 16px;
+  color: var(--color-on-surface-variant);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+.aboutDetails td {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+}
+
+/* styles for section headings */
+.about h2 {
+  color: var(--color-on-surface);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: 0.15px;
+  margin-block: 24px 16px;
+}
+
+.about h2:first-child {
+  margin-block-start: 0;
 }
