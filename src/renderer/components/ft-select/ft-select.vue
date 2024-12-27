@@ -1,48 +1,65 @@
 <template>
-  <div class="select">
-    <select
-      :id="sanitizedId ?? sanitizedPlaceholder"
-      ref="select"
-      :describe-by-id="describeById"
-      class="select-text"
-      :class="{disabled: disabled}"
-      :value="value"
-      :name="sanitizedId ?? sanitizedPlaceholder"
-      :disabled="disabled"
-      @change="change($event.target.value)"
-    >
-      <option
-        v-for="(name, index) in selectNames"
-        :key="index"
-        :value="selectValues[index]"
-        :lang="isLocaleSelector && selectValues[index] !== 'system' ? selectValues[index] : null"
+  <div
+    ref="select"
+    class="select-container"
+    :class="{ 'is-disabled': disabled }"
+  >
+    <div class="select-label-container">
+      <label
+        v-if="!disabled"
+        class="select-label"
+        :for="sanitizedId ?? sanitizedPlaceholder"
       >
-        {{ name }}
-      </option>
-    </select>
-    <font-awesome-icon
-      :icon="['fas', 'sort-down']"
-      class="iconSelect"
-    />
-    <span class="select-highlight" />
-    <span class="select-bar" />
-    <label
-      v-if="!disabled"
-      class="select-label"
-      :for="sanitizedId ?? sanitizedPlaceholder"
-    >
-      <font-awesome-icon
-        :icon="icon"
-        class="select-icon"
-        :color="iconColor"
+        <font-awesome-icon
+          :icon="icon"
+          class="select-icon"
+          :color="iconColor"
+        />
+        {{ placeholder }}
+      </label>
+      <ft-tooltip
+        v-if="tooltip !== ''"
+        class="selectTooltip"
+        :tooltip="tooltip"
       />
-      {{ placeholder }}
-    </label>
-    <ft-tooltip
-      v-if="tooltip !== ''"
-      class="selectTooltip"
-      :tooltip="tooltip"
+    </div>
+    <ft-button
+      :title="sanitizedId ?? sanitizedPlaceholder"
+      :label="label"
+      background-color="var(--color-surface-container-low)"
+      text-color="var(--color-on-surface)"
+      iconPosition="after"
+      :icon="['fas', 'sort-down']"
+      :no-border="true"
+      class="select-text"
+      :disabled="disabled"
+      @click="toggleDropdown"
     />
+    <div
+      v-if="isDropdownOpen"
+      class="options"
+      :disabled="disabled"
+    >
+      <ul
+        :id="sanitizedId ?? sanitizedPlaceholder"
+        class="list"
+      >
+        <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
+        <li
+          v-for="(name, index) in selectNames"
+          :key="index"
+          class="select-option"
+          :class="{
+            selected: value === selectValues[index]
+          }"
+          :value="selectValues[index]"
+          :lang="isLocaleSelector && selectValues[index] !== 'system' ? selectValues[index] : null"
+          @click="change(selectValues[index])"
+        >
+          {{ name }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 

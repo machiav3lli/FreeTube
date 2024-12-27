@@ -1,10 +1,12 @@
 import { defineComponent, nextTick } from 'vue'
 import FtTooltip from '../ft-tooltip/ft-tooltip.vue'
+import FtButton from '../../components/ft-button/ft-button.vue'
 import { sanitizeForHtmlId } from '../../helpers/accessibility'
 
 export default defineComponent({
   name: 'FtSelect',
   components: {
+    'ft-button': FtButton,
     'ft-tooltip': FtTooltip
   },
   props: {
@@ -54,9 +56,18 @@ export default defineComponent({
     }
   },
   emits: ['change'],
+  data: function() {
+    return {
+      isDropdownOpen: false
+    }
+  },
   computed: {
     sanitizedPlaceholder: function() {
       return sanitizeForHtmlId(this.placeholder)
+    },
+    label: function() {
+      const index = this.selectValues.indexOf(this.value)
+      return index !== -1 ? this.selectNames[index] : 'Select'
     }
   },
   watch: {
@@ -72,6 +83,24 @@ export default defineComponent({
     }
   },
   methods: {
+    handleClickOutside: function (event) {
+      // Check if the focus is leaving the entire dropdown container
+      if (this.$refs.select && !this.$refs.select.contains(event.target)) {
+        this.isDropdownOpen = false
+        document.removeEventListener('click', this.handleClickOutside)
+      }
+    },
+
+    toggleDropdown: function () {
+      this.isDropdownOpen = !this.isDropdownOpen
+
+      if (this.isDropdownOpen) {
+        document.addEventListener('click', this.handleClickOutside)
+      } else {
+        document.removeEventListener('click', this.handleClickOutside)
+      }
+    },
+
     change: function(value) {
       this.$emit('change', value)
     }

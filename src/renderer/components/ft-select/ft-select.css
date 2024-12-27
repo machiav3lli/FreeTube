@@ -21,94 +21,102 @@
 */
 
 /* select starting stylings ------------------------------ */
-.select {
+.select-container {
   position: relative;
+  block-size: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   inline-size: 200px;
   margin-block-start: 30px;
 }
 
 .select-text {
   position: relative;
-  font-family: inherit;
-  background-color: var(--search-bar-color);
-  color: var(--primary-text-color);
   inline-size: 100%;
-  block-size: 45px;
-  padding-inline-start: 1rem;
-  font-size: 16px;
-  border-radius: 5px;
+  block-size: 48px;
+  border-radius: 8px;
   border: 0;
 }
 
-.select option {
-  color: var(--secondary-text-color);
-  background-color: var(--card-bg-color);
+.list {
+  position: absolute;
+  inline-size: 100%;
+  list-style: none;
+  padding: 4px;
+  margin: 0;
+  z-index: 10;
+  border-radius: 8px;
+  word-wrap: break-word;
+  box-shadow: 0 2px 6px 2px var(--color-surface);
+  background-color: var(--color-surface-container-low);
+  display: flex;
+  flex-direction: column;
+  max-block-size: 200px;
+  overflow-y: auto;
+  gap: 4px;
 }
 
-/* stylelint-disable-next-line a11y/no-outline-none */
-.select-text:focus {
-  outline: none;
+.select-option {
+  display: block;
+  padding-block: 0;
+  padding-inline: 12px;
+  line-height: 2rem;
+  border-radius: 4px;
+  gap: 4px;
+
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface-variant);
+  }
+
+  &.selected {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
 }
 
 /* Use custom arrow */
-.select .select-text {
+.select-container .select-text {
   appearance: none;
   text-overflow: ellipsis;
   padding-inline-end: 1.5rem;
 }
 
-.iconSelect {
-  position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
-
-  /* Styling the down arrow */
-  padding: 0;
-  content: '';
-  border-inline-start: 6px solid transparent;
-  border-inline-end: 6px solid transparent;
-  pointer-events: none;
-  color: var(--tertiary-text-color);
-}
-
-.disabled,
-.disabled + .iconSelect {
+.disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
-.selectTooltip {
-  position: absolute;
-  inset-block-start: -22px;
-  inset-inline-end: 13px;
+/* LABEL ======================================= */
+.select-label-container {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
 }
 
-
-/* LABEL ======================================= */
 .select-label {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: normal;
-  position: absolute;
+  position: static;
   display: flex;
-  column-gap: 6px;
+  column-gap: 8px;
   inset-inline-start: 0;
   inset-block-start: 10px;
+  color: var(--color-on-surface-variant);
   transition: 0.2s ease all;
-  color: var(--tertiary-text-color);
+
+  .select-icon {
+    inline-size: 12px;
+    block-size: 12px;
+  }
 }
 
-.select-icon {
-  inline-size: 14px;
-  block-size: 14px;
-}
-
-/* active state */
-.select-text:focus ~ .select-label,
-.select-text:valid ~ .select-label {
-  color: var(--accent-color);
-  inset-block-start: -20px;
-  transition: 0.2s ease all;
-  font-size: 14px;
+.selectTooltip {
+  position: relative;
 }
 
 /* BOTTOM BARS ================================= */
@@ -124,7 +132,7 @@
   inline-size: 0;
   inset-block-end: 1px;
   position: absolute;
-  background: var(--accent-color);
+  background: var(--color-secondary);
   transition: 0.2s ease all;
 }
 
@@ -142,19 +150,8 @@
   inline-size: 50%;
 }
 
-/* HIGHLIGHTER ================================== */
-.select-highlight {
-  position: absolute;
-  block-size: 60%;
-  inline-size: 100px;
-  inset-block-start: 25%;
-  inset-inline-start: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
 @media only screen and (width <= 800px) {
-  .select {
+  .select-container {
     inline-size: 100%;
   }
 }
