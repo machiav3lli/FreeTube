@@ -43,20 +43,10 @@
   cursor: pointer;
   font-size: 15px;
 
-  &:hover {
-    background-color: var(--color-surface-container-high);
-    color: var(--color-on-surface);
-  }
-
   &:active {
     background-color: var(--color-surface-container-high);
     color: var(--color-on-surface);
   }
-}
-
-.chaptersWrapper.compact .chapter {
-  display: flex;
-  flex-direction: row;
 }
 
 .chapterThumbnail {
@@ -64,10 +54,21 @@
   inline-size: 130px;
   margin: 4px;
   border-radius: 8px;
+  border: solid 3px transparent;
+}
 
-  &:hover {
-    border: solid 3px var(--color-outline-variant);
+.chapter:hover {
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+
+  .chapterThumbnail {
+    border-color: var(--color-outline-variant);
   }
+}
+
+.chaptersWrapper.compact .chapter {
+  display: flex;
+  flex-direction: row;
 }
 
 .chapterTitle {
@@ -91,9 +92,7 @@
   }
 
   .chapterThumbnail {
-    border: solid 3px var(--color-secondary);
-    border-radius: 8px;
-    margin: 0;
+    border-color: var(--color-secondary);
   }
 
   .chapterTitle {
