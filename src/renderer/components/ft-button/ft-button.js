@@ -19,6 +19,11 @@ export default defineComponent({
       type: String,
       default: ''
     },
+    iconPosition: {
+      type: String,
+      default: 'before',
+      validator: value => ['before', 'after'].includes(value)
+    },
     icon: {
       type: Array,
       default: null

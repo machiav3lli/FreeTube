@@ -11,10 +11,18 @@
   >
     <slot>
       <font-awesome-icon
-        v-if="icon"
+        v-if="icon && iconPosition === 'before'"
         :icon="icon"
+        class="icon"
       />
-      {{ label }}
+      <span class="label">
+        {{ label }}
+      </span>
+      <font-awesome-icon
+        v-if="icon && iconPosition === 'after'"
+        :icon="icon"
+        class="icon"
+      />
     </slot>
   </button>
 </template>
