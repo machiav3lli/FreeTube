@@ -8,7 +8,7 @@
 }
 
 .videoIndex {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   text-align: center;
 }
 

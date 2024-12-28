@@ -47,7 +47,7 @@
       padding-inline: 16px;
       box-sizing: content-box;
       inline-size: 85%;
-      background-color: var(--card-bg-color);
+      background-color: var(--color-surface);
       box-shadow: 0 2px 1px 0 var(--primary-shadow-color);
 
       /* video progress bar has z-index 2 and this must be above it */
@@ -68,7 +68,7 @@
 
   &.list {
     .playlistInfoContainer {
-      background-color: var(--card-bg-color);
+      background-color: var(--color-surface);
       block-size: calc(100vh - 132px);
       inline-size: 30%;
       inset-block-start: 96px;
@@ -156,5 +156,5 @@
 }
 
 .message {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 }

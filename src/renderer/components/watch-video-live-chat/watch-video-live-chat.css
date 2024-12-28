@@ -26,12 +26,12 @@
   font-weight: normal;
   margin-inline-start: 5px;
   font-size: 15px;
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 }
 
 .message {
   font-size: 18px;
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   padding: 0;
   margin: 0;
 }
@@ -44,7 +44,7 @@
 
 .errorIcon {
   inline-size: 100%;
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   font-size: 100px;
 }
 
@@ -69,14 +69,14 @@
   margin-inline: 2px;
   block-size: 30px;
   cursor: pointer;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   border-radius: 200px;
 }
 
 .superChatContent {
   margin-inline-start: 32px;
   margin-block-start: -25px;
-  color: var(--text-with-main-color);
+  color: var(--color-on-primary);
 }
 
 .channelThumbnail {
@@ -85,7 +85,7 @@
 }
 
 .channelName {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   font-weight: bold;
   padding-inline-end: 5px;
 }
@@ -97,7 +97,7 @@
 }
 
 .donationAmount {
-  color: var(--text-with-main-color);
+  color: var(--color-on-primary);
 }
 
 .openedSuperChat {
@@ -117,7 +117,7 @@
   grid-template-columns: auto;
   margin-inline: 5%;
   margin-block: 25px 10px;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   border-radius: 5px;
   position: relative;
 }
@@ -126,7 +126,7 @@
   margin-block-start: -15px;
   inline-size: 100%;
   block-size: 55px;
-  background-color: var(--primary-color-hover);
+  background-color: var(--color-primary-hover);
   border-radius: 5px 5px 0 0;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .upperSuperChatMessage .channelName {
-  color: var(--text-with-main-color);
+  color: var(--color-on-primary);
   opacity: 0.7;
   position: absolute;
   inset-block-start: -20px;
@@ -165,7 +165,7 @@
 }
 
 .upperSuperChatMessage .donationAmount {
-  color: var(--text-with-main-color);
+  color: var(--color-on-primary);
   font-weight: bold;
   margin-inline-start: 65px;
   position: absolute;
@@ -173,7 +173,7 @@
 }
 
 .superChatMessage .chatMessage {
-  color: var(--text-with-main-color);
+  color: var(--color-on-primary);
   margin-inline-start: 20px;
 }
 
@@ -198,8 +198,8 @@
 
 .owner {
   margin-inline-end: 2px;
-  background-color: var(--primary-color);
-  color: var(--text-with-main-color);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .badgeImage {
@@ -207,7 +207,7 @@
 }
 
 .scrollToBottom {
-  background-color: var(--accent-color);
+  background-color: var(--color-secondary);
   inline-size: 35px;
   block-size: 35px;
   position: absolute;
@@ -221,12 +221,12 @@
 
 .scrollToBottom:hover,
 .scrollToBottom:focus {
-  background-color: var(--accent-color-light);
+  background-color: var(--color-secondary-container);
   transition: background 0.2s ease-in;
 }
 
 .icon {
-  color: var(--text-with-accent-color);
+  color: var(--color-on-secondary);
   font-size: 22px;
   position: relative;
   inset-block-start: 0.45rem;

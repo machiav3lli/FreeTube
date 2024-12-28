@@ -1,11 +1,6 @@
 .ftNotificationBanner {
-  background-color: var(--primary-color);
-  color: var(--text-with-main-color);
-
-  /*
-  background-color: var(--accent-color);
-  color: var(--text-with-accent-color);
-  */
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   margin: 4px;
   padding: 16px;
   padding-block: 3px 5px;

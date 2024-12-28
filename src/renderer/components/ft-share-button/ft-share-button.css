@@ -56,7 +56,7 @@
 
 
 .divider {
-  background: var(--color-on-surface-variant);
+  background: var(--color-outline-variant);
   opacity: 0.12;
   grid-row: span 3;
   margin-block: 8px;

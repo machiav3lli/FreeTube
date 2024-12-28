@@ -67,7 +67,7 @@
         :select-values="colorValues"
         :disabled="!areColorThemesEnabled"
         :icon="['fas', 'palette']"
-        icon-color="var(--primary-color)"
+        icon-color="var(--color-primary)"
         @change="updateMainColor"
       />
     </ft-flex-box>

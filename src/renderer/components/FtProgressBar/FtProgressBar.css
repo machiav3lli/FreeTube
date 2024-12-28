@@ -3,6 +3,6 @@
   block-size: 3px;
   inset-block-end: 0;
   inset-inline-start: 0;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary-container);
   z-index: 4;
 }

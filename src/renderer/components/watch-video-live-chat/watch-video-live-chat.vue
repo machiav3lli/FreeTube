@@ -59,7 +59,7 @@
           v-for="(comment, index) in superChatComments"
           :key="index"
           :aria-label="$t('Video.Show Super Chat Comment')"
-          :style="{ backgroundColor: 'var(--primary-color)' }"
+          :style="{ backgroundColor: 'var(--color-primary)' }"
           class="superChat"
           :class="comment.superChat.colorClass"
           role="button"

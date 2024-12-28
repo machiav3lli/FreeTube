@@ -57,8 +57,8 @@
         <ft-flex-box>
           <ft-button
             label="Load More"
-            background-color="var(--primary-color)"
-            text-color="var(--text-with-main-color)"
+            background-color="var(--color-primary)"
+            text-color="var(--color-on-primary)"
             @click="increaseLimit"
           />
         </ft-flex-box>

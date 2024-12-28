@@ -73,18 +73,18 @@ export default defineComponent({
   methods: {
     optionButtonTextColor: function(index) {
       if (index === 0 && this.isFirstOptionDestructive) {
-        return 'var(--destructive-text-color)'
+        return 'var(--color-on-error)'
       } else if (index < this.optionNames.length - 1) {
-        return 'var(--text-with-accent-color)'
+        return 'var(--color-on-secondary)'
       } else {
         return null
       }
     },
     optionButtonBackgroundColor: function(index) {
       if (index === 0 && this.isFirstOptionDestructive) {
-        return 'var(--destructive-color)'
+        return 'var(--color-error)'
       } else if (index < this.optionNames.length - 1) {
-        return 'var(--accent-color)'
+        return 'var(--color-secondary)'
       } else {
         return null
       }

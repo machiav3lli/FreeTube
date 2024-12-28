@@ -34,29 +34,29 @@
     <ft-flex-box>
       <ft-button
         :label="$t('Settings.Privacy Settings.Clear Search Cache')"
-        text-color="var(--destructive-text-color)"
-        background-color="var(--destructive-color)"
+        text-color="var(--color-on-error)"
+        background-color="var(--color-error)"
         :icon="['fas', 'trash']"
         @click="showSearchCachePrompt = true"
       />
       <ft-button
         :label="$t('Settings.Privacy Settings.Remove Watch History')"
-        text-color="var(--destructive-text-color)"
-        background-color="var(--destructive-color)"
+        text-color="var(--color-on-error)"
+        background-color="var(--color-error)"
         :icon="['fas', 'trash']"
         @click="showRemoveHistoryPrompt = true"
       />
       <ft-button
         :label="$t('Settings.Privacy Settings.Remove All Subscriptions / Profiles')"
-        text-color="var(--destructive-text-color)"
-        background-color="var(--destructive-color)"
+        text-color="var(--color-on-error)"
+        background-color="var(--color-error)"
         :icon="['fas', 'trash']"
         @click="showRemoveSubscriptionsPrompt = true"
       />
       <ft-button
         :label="$t('Settings.Privacy Settings.Remove All Playlists')"
-        text-color="var(--destructive-text-color)"
-        background-color="var(--destructive-color)"
+        text-color="var(--color-on-error)"
+        background-color="var(--color-error)"
         :icon="['fas', 'trash']"
         @click="showRemovePlaylistsPrompt = true"
       />

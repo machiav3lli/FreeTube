@@ -16,7 +16,7 @@
 
 .title {
   text-decoration: none;
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   inline-size: 220px;
   flex: 1 1 auto;
   display: flex;
@@ -26,7 +26,7 @@
 /* prevent hover styling from showing on title click for mobile */
 @media (hover: hover) {
   .title:hover {
-    color: var(--primary-text-color);
+    color: var(--color-on-surface);
   }
 }
 
@@ -70,12 +70,12 @@
   }
 
   .title.active {
-    color: var(--primary-text-color);
+    color: var(--color-on-surface);
     font-weight: 600;
   }
 
   .title.active .titleUnderline {
-    border-block-end: 4px solid var(--primary-color);
+    border-block-end: 4px solid var(--color-primary);
   }
 }
 

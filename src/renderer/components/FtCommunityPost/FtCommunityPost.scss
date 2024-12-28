@@ -60,13 +60,13 @@
 }
 
 .commentsLink {
-  color: var(--primary-text-color);
+  color: var(--color-on-surface);
   text-decoration: none;
   font-weight: bold;
 }
 
 .bottomSection {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
   display: block;
   flex-direction: column;
   font-size: 15px;
@@ -121,11 +121,11 @@
     }
 
     .playlistTitle {
-      color: var(--primary-text-color);
+      color: var(--color-on-surface);
     }
 
     .playlistPreviewVideos {
-      color: var(--primary-text-color);
+      color: var(--color-on-surface);
       display: flex;
       font-size: small;
       padding-block-start: 10px;

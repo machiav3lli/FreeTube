@@ -14,7 +14,7 @@
   text-align: center;
   text-decoration: underline;
   cursor: pointer;
-  color: var(--title-color);
+  color: var(--color-on-surface);
 }
 
 .noCommentMsg {
@@ -46,7 +46,7 @@
   font-size: 13px;
   text-decoration: underline;
   cursor: pointer;
-  color: var(--title-color);
+  color: var(--color-on-surface);
 }
 
 .commentThumbnail {
@@ -80,7 +80,7 @@
 }
 
 .commentOwner {
-  background-color: var(--secondary-card-bg-color);
+  background-color: var(--color-surface-container-highest);
   border-radius: 10px;
   padding-inline: 10px;
 }
@@ -173,7 +173,7 @@
   margin-inline-start: 5px;
   text-decoration: underline;
   cursor: pointer;
-  color: var(--title-color);
+  color: var(--color-on-surface);
 }
 
 .commentReplies {
@@ -192,5 +192,5 @@
   text-align: center;
   text-decoration: underline;
   cursor: pointer;
-  color: var(--title-color);
+  color: var(--color-on-surface);
 }

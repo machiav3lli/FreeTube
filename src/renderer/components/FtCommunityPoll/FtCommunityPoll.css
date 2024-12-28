@@ -67,5 +67,5 @@
 
 .reveal-answer:hover,
 .reveal-answer:focus {
-  background-color: var(--side-nav-hover-color);
+  background-color: var(--color-surface-container-hover);
 }

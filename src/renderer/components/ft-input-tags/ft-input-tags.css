@@ -1,6 +1,6 @@
 .ft-input-tags-component {
   position: relative;
-  background-color: var(--bg-color);
+  background-color: var(--color-background);
   padding: 20px;
   border-radius: 5px;
   display: block;
@@ -21,7 +21,7 @@
 
 .ft-tag-box li {
   list-style: none;
-  background-color: var(--card-bg-color);
+  background-color: var(--color-surface);
   margin: 5px;
   border-radius: 5px;
   display: flex;
@@ -49,7 +49,7 @@
 }
 
 .removeTagButton {
-  color: var(--primary-text-color);
+  color: var(--color-on-surface);
   opacity: 0.5;
   padding: 10px;
   padding-inline-start: 0;

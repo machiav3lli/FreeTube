@@ -1,5 +1,5 @@
 .getNextPage {
-  background-color: var(--search-bar-color);
+  background-color: var(--color-surface-container-low);
   inline-size: 100%;
   block-size: 45px;
   line-height: 45px;
@@ -10,8 +10,8 @@
 
 .getNextPage:hover,
 .getNextPage:focus {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
+  background-color: var(--color-surface-container-hover);
+  color: var(--color-surface-container-highest);
 }
 
 .card {

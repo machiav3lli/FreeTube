@@ -1,16 +1,16 @@
 .button {
   background-color: transparent;
   border-style: none;
-  color: var(--primary-text-color);
+  color: var(--color-on-surface);
   cursor: pointer;
   font-size: 1rem;
   padding: 0;
 }
 
 .text {
-  background-color: color-mix(in srgb, var(--primary-text-color) 80%, transparent);
+  background-color: color-mix(in srgb, var(--color-on-surface) 80%, transparent);
   border-radius: 20px;
-  color: var(--card-bg-color);
+  color: var(--color-surface);
   font-size: 1rem;
   line-height: 120%;
   margin: 0;
