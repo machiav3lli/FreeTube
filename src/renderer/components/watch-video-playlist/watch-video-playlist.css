@@ -23,7 +23,7 @@
 }
 
 .playlistProgressBar {
-  margin-inline-start: 10px;
+  margin-inline-start: 8px;
 
   /* > In order to let ::-webkit-progress-value take effect, appearance needs to be set to none on the <progress> element. */
 
@@ -32,19 +32,23 @@
 }
 
 .playlistProgressBar::-webkit-progress-value {
+  border-radius: 4px;
+
   /* Color for filled part */
 
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-value */
 
   /* background-color is required to be declared here to prevent color being green */
-  background-color: var(--color-secondary);
+  background-color: var(--color-on-secondary-container);
 }
 
 .playlistProgressBar::-webkit-progress-bar {
+  border-radius: 4px;
+
   /* Color for unfilled part */
 
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-progress-bar */
-  background-color: var(--color-on-surface-variant);
+  background-color: var(--color-secondary-container);
 }
 
 .playlistIcon {
@@ -55,31 +59,31 @@
   margin-block-start: -25px;
   cursor: pointer;
   border-radius: 50%;
-  color: var(--color-on-surface-variant);
+  stroke: var(--color-surface-container);
+  color: var(--color-on-surface);
   transition: background 0.2s ease-out;
   stroke-width: 20;
-  stroke: var(--color-background);
 }
 
 .playlistIcon:hover {
-  background-color: var(--color-surface-container-hover);
-  color: var(--color-on-surface-variant);
+  background-color: var(--color-secondary-container);
+  stroke: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
   stroke-width: 20;
-  stroke: var(--color-surface-container-hover);
   transition: background 0.2s ease-in;
 }
 
 .playlistIconActive {
+  stroke: var(--color-secondary);
   color: var(--color-secondary);
   stroke-width: 10;
-  stroke: var(--color-secondary);
 }
 
 .playlistIconActive:hover {
-  background-color: var(--color-surface-container-hover);
-  color: var(--color-secondary-hover);
+  background-color: var(--color-secondary-container);
+  stroke: var(--color-on-secondary-container);
+  color: var(--color-on-secondary-container);
   stroke-width: 10;
-  stroke: var(--color-secondary-hover);
   transition: background 0.2s ease-in;
 }
 
@@ -93,6 +97,7 @@
   grid-template-columns: 30px 1fr;
   align-items: center;
   transition: background 0.2s ease-out;
+  border-radius: 8px;
 }
 
 .playlistItem:not(:last-child) {
@@ -100,8 +105,8 @@
 }
 
 .playlistItem:hover {
-  background-color: var(--color-surface-container-hover);
-  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
   transition: background 0.2s ease-in;
 }
 
