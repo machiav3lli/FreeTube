@@ -8,7 +8,7 @@ h3 {
 }
 
 .message {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 }
 
 .profileName,
@@ -81,6 +81,14 @@ h3 {
   inline-size: 85%;
   margin-block: 0 60px;
   margin-inline: auto;
+}
+
+.profileActions {
+  display: flex;
+  flex-flow: nowrap row;
+  justify-content: center;
+  gap: 8px;
+  margin-block-start: 8px;
 }
 
 @media only screen and (width <= 680px) {

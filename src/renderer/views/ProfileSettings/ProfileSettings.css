@@ -3,7 +3,7 @@ h2 {
 }
 
 .message {
-  color: var(--tertiary-text-color);
+  color: var(--color-on-surface-variant);
 }
 
 .profileList {
@@ -13,15 +13,8 @@ h2 {
 }
 
 .profileList > .openedProfile {
-  background-color: var(--primary-text-color);
+  background-color: var(--color-surface-container-highest);
   transition: background 0.2s ease-out;
-  color: var(--card-bg-color);
-}
-
-.profileList > .openedProfile:hover,
-.profileList > .openedProfile:focus-visible {
-  background-color: var(--tertiary-text-color);
-  transition: background 0.2s ease-in;
 }
 
 .card {

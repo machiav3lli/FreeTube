@@ -73,22 +73,24 @@
                 <template
                   v-else
                 >
-                  <ft-button
-                    :label="$t('Profile.Update Profile')"
-                    @click="saveProfile"
-                  />
-                  <ft-button
-                    :label="$t('Profile.Make Default Profile')"
-                    @click="setDefaultProfile"
-                  />
-                  <ft-button
-                    v-if="!isMainProfile"
-                    :label="$t('Profile.Delete Profile')"
-                    text-color="var(--destructive-text-color)"
-                    background-color="var(--destructive-color)"
-                    :icon="['fas', 'trash']"
-                    @click="openDeletePrompt"
-                  />
+                  <div class="profileActions">
+                    <ft-button
+                      :label="$t('Profile.Update Profile')"
+                      @click="saveProfile"
+                    />
+                    <ft-button
+                      :label="$t('Profile.Make Default Profile')"
+                      @click="setDefaultProfile"
+                    />
+                    <ft-button
+                      v-if="!isMainProfile"
+                      :label="$t('Profile.Delete Profile')"
+                      text-color="var(--color-on-error)"
+                      background-color="var(--color-error)"
+                      :icon="['fas', 'trash']"
+                      @click="openDeletePrompt"
+                    />
+                  </div>
                 </template>
               </ft-flex-box>
             </div>

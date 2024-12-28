@@ -1,16 +1,20 @@
 .bubblePadding {
-  inline-size: 100px;
-  block-size: 115px;
+  inline-size: 128px;
+  block-size: 128px;
   padding-block: 10px 30px;
   padding-inline: 10px;
   cursor: pointer;
-  transition: background 0.2s ease-out;
-}
+  border-radius: 24px;
 
-.bubblePadding:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
-  transition: background 0.2s ease-in;
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+  }
+
+  &:active {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+  }
 }
 
 .bubble {

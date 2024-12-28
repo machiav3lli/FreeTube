@@ -9,7 +9,7 @@
 }
 
 .colorOption:hover {
-  box-shadow: 0 0 0 2px var(--side-nav-hover-color);
+  box-shadow: 0 0 0 2px var(--color-surface-container-hover);
 }
 
 .initial {
@@ -27,17 +27,20 @@
   min-inline-size: 250px;
   block-size: auto;
   padding: 5px;
-  background-color: var(--card-bg-color);
-  box-shadow: 0 0 4px var(--scrollbar-color-hover);
+  background-color: var(--color-surface);
+  box-shadow: 0 0 4px var(--color-surface-container-hover);
 }
 
 .profileWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-block-start: 60px;
   block-size: auto;
   overflow-y: auto;
 
   /*
-  profile list max height: 90% of window size - 100 px. It's scaled to be 340px on 800x600 resolution. 
+  profile list max height: 90% of window size - 100 px. It's scaled to be 340px on 800x600 resolution.
   Offset of 100px is to compensate for the fixed size of elements above the list, which takes more screen space on lower resolutions
   */
   max-block-size: calc(90vh - 100px);
@@ -53,22 +56,25 @@ Height adjust for profile list so it won't cover navbar.  */
 }
 
 .profile {
+  display: flex;
+  place-items: center;
+  align-items: center;
   cursor: pointer;
-  block-size: 50px;
+  block-size: 52px;
   transition: background 0.2s ease-out;
-}
+  border-radius: 8px;
 
-.profile:hover {
-  background-color: var(--side-nav-hover-color);
-  color: var(--side-nav-hover-text-color);
-  transition: background 0.2s ease-in;
+  &:hover {
+    background-color: var(--color-surface-container-high);
+    color: var(--color-on-surface);
+    transition: background 0.2s ease-in;
+  }
 }
 
 .profile .colorOption {
   float: var(--float-left-ltr-rtl-value);
   position: relative;
-  inset-block-end: 5px;
-  margin: 10px;
+  margin: 12px;
 }
 
 .profileName {

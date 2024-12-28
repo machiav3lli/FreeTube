@@ -40,8 +40,8 @@
         />
         <ft-button
           :label="$t('Profile.Add Selected To Profile')"
-          text-color="var(--text-with-main-color)"
-          background-color="var(--primary-color)"
+          text-color="var(--color-on-primary)"
+          background-color="var(--color-primary)"
           @click="addChannelToProfile"
         />
       </ft-flex-box>
