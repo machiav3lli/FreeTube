@@ -52,8 +52,8 @@
       <ft-flex-box>
         <ft-button
           :label="isCommunity ? $t('Subscriptions.Load More Posts') : $t('Subscriptions.Load More Videos')"
-          background-color="var(--primary-color)"
-          text-color="var(--text-with-main-color)"
+          background-color="var(--color-primary)"
+          text-color="var(--color-on-primary)"
           @click="increaseLimit"
         />
       </ft-flex-box>

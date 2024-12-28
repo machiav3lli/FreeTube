@@ -9,27 +9,31 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-block: -3px 10px;
-  color: var(--tertiary-text-color);
-}
-
-.selectedTab {
-  border-block-end: 3px solid var(--primary-color);
-  color: var(--primary-text-color);
-  font-weight: bold;
-  box-sizing: border-box;
-  margin-block-end: -3px;
+  color: var(--color-on-surface-variant);
 }
 
 .tab {
   text-align: center;
-  padding: 15px;
-  font-size: 15px;
+  padding: 16px;
+  font-size: 16px;
   cursor: pointer;
   align-self: flex-end;
-}
 
-.tab:hover {
-  font-weight: bold;
+  &:hover,
+  &:focus {
+    font-weight: bold;
+    color: var(--color-on-surface);
+    border-block-end: 4px solid var(--color-on-surface);
+    margin-block-end: -4px;
+  }
+
+  &.selectedTab {
+    color: var(--color-primary);
+    border-block-end: 4px solid var(--color-primary);
+    font-weight: bold;
+    box-sizing: border-box;
+    margin-block-end: -4px;
+  }
 }
 
 @media only screen and (width <= 680px) {
