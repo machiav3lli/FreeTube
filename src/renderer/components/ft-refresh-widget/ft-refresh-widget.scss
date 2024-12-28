@@ -2,11 +2,9 @@
 
 .floatingRefreshSection {
   box-sizing: border-box;
-  padding-block: 5px;
-  padding-inline: 10px;
-  box-shadow: 0 2px 1px 0 var(--primary-shadow-color);
-  background-color: var(--card-bg-color);
-  border-inline-start: 2px solid var(--primary-shadow-color);
+  padding-block: 4px;
+  padding-inline: 8px;
+  background-color: transparent;
   display: flex;
   align-items: center;
   gap: 5px;

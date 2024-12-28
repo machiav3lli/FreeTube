@@ -1,8 +1,9 @@
 .progressBar {
   position: fixed;
-  block-size: 3px;
+  block-size: 4px;
   inset-block-end: 0;
   inset-inline-start: 0;
   background-color: var(--color-primary-container);
   z-index: 4;
+  transition: inline-size 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

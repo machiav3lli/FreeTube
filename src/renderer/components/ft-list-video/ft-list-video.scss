@@ -8,6 +8,7 @@
 .thumbnailImage {
   // Makes img element sized correctly before image loading starts
   aspect-ratio: 16/9 auto;
+  border-radius: 8px;
 }
 
 .videoTagLine {
